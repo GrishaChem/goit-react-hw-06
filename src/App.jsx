@@ -63,7 +63,7 @@ const App = () => {
       <div>
         <h1>Phonebook</h1>
         <ContactForm addContact={addContact} />
-        <SearchBox handleChange={handleChange} />
+        <SearchBox />
         {filtredContacts.length > 0 && (
           <ContactList
             contacts={filtredContacts}

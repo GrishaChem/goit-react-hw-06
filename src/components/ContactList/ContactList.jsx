@@ -4,10 +4,15 @@ import s from "../ContactList/ContactList.module.css";
 import { useSelector } from "react-redux";
 import { deleteContact, selectContacts } from "../../redux/contactsSlice.js";
 import { useDispatch } from "react-redux";
+import { selectFilter } from "../../redux/filtersSlice";
 
 const ContactList = ({}) => {
-  const contacts = useSelector(selectContacts);
   const dispatch = useDispatch();
+  const contacts = useSelector(selectContacts);
+  const filterStr = useSelector(selectFilter);
+  const filteredData = contacts.filter((contact) =>
+    contact.name.toLowerCase().trim().includes(filterStr.toLowerCase().trim())
+  );
   return (
     <ul className={s.container}>
       {contacts.map((contact) => (
