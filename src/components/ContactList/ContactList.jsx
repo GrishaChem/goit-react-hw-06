@@ -6,7 +6,7 @@ import { deleteContact, selectContacts } from "../../redux/contactsSlice.js";
 import { useDispatch } from "react-redux";
 import { selectNameFilter } from "../../redux/filtersSlice";
 
-const ContactList = ({}) => {
+const ContactList = () => {
   const dispatch = useDispatch();
   const contacts = useSelector(selectContacts);
   const filterStr = useSelector(selectNameFilter);
@@ -20,6 +20,7 @@ const ContactList = ({}) => {
           <Contact
             name={contact.name}
             number={contact.number}
+            id={contact.id}
             deleteContact={() => dispatch(deleteContact(contact.id))}
           />
         </li>

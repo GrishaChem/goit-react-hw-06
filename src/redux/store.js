@@ -19,7 +19,9 @@ const persistConfig = {
   storage,
 }
 
-const persistedReducer = persistReducer(persistConfig, contactsReducer, filterReducer)
+
+
+const persistedReducer = persistReducer(persistConfig, contactsReducer)
 
 
 export const store = configureStore({

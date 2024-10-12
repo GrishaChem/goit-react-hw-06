@@ -6,7 +6,7 @@ import { nanoid } from "nanoid";
 import { useDispatch } from "react-redux";
 import { addContacts } from "../../redux/contactsSlice";
 
-const ContactForm = ({ addContact }) => {
+const ContactForm = () => {
   const dispatch = useDispatch();
 
   const asd = {
