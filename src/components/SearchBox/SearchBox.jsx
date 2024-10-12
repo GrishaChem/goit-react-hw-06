@@ -1,6 +1,6 @@
 import React from "react";
 import { useDispatch, useSelector } from "react-redux";
-import { search, selectFilter } from "../../redux/filtersSlice";
+import { changeFilter, selectNameFilter } from "../../redux/filtersSlice";
 import { selectContacts } from "../../redux/contactsSlice";
 
 const SearchBox = ({}) => {
@@ -13,7 +13,7 @@ const SearchBox = ({}) => {
         type="text"
         name=""
         id=""
-        onChange={(e) => dispatch(search(e.target.value))}
+        onChange={(e) => dispatch(changeFilter(e.target.value))}
       />
     </div>
   );

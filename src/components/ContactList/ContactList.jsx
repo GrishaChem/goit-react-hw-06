@@ -4,12 +4,12 @@ import s from "../ContactList/ContactList.module.css";
 import { useSelector } from "react-redux";
 import { deleteContact, selectContacts } from "../../redux/contactsSlice.js";
 import { useDispatch } from "react-redux";
-import { selectFilter } from "../../redux/filtersSlice";
+import { selectNameFilter } from "../../redux/filtersSlice";
 
 const ContactList = ({}) => {
   const dispatch = useDispatch();
   const contacts = useSelector(selectContacts);
-  const filterStr = useSelector(selectFilter);
+  const filterStr = useSelector(selectNameFilter);
   const filteredData = contacts.filter((contact) =>
     contact.name.toLowerCase().trim().includes(filterStr.toLowerCase().trim())
   );
